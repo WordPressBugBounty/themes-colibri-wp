@@ -123,7 +123,7 @@ class PluginsManager {
             if ($slug === $colibriwp_builder_slug) {
                 $source = isset($_REQUEST['source']) ? wp_unslash($_REQUEST['source']) : 'other';
                 $theme = get_template();
-                $option = "${theme}_start-source";
+                $option = $theme . "_start-source";
                 update_option($option, $source);
             }
 

@@ -140,12 +140,17 @@ colibriwp_theme()
         'flex-width'  => true,
         'width'       => 150,
         'height'      => 70,
-    ) )
-    ->register_menus( array(
+    ) );
+
+add_action('init', function() {
+    colibriwp_theme()->register_menus( array(
         'header-menu' => esc_html__( 'Header Menu', 'colibri-wp' ),
         'footer-menu' => esc_html__( 'Footer Menu', 'colibri-wp' ),
-    ) )
-    ->register_sidebars( array(
+    ) );
+
+}, 1);
+add_action('widgets_init',  function() {
+    colibriwp_theme()->register_sidebars( array(
         array(
             'name'          => esc_html__( 'Blog sidebar widget area', 'colibri-wp' ),
             'id'            => 'colibri-sidebar-1',
@@ -164,7 +169,7 @@ colibriwp_theme()
             'after_widget'  => '</div>',
         ),
     ) );
-
+}, 1);
 
 if ( ! apply_filters( 'colibri_page_builder/installed', false ) ) {
     colibriwp_assets()

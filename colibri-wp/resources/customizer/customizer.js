@@ -78161,7 +78161,7 @@ var refresh = _.debounce(function () {
 }, 100);
 
 function setHeader(header) {
-    var headerData = headers[header]['data'];
+    var headerData = headers[header]["data"];
 
     for (var setting_id in headerData) {
         if (!headerData.hasOwnProperty(setting_id)) {
@@ -78172,18 +78172,52 @@ function setHeader(header) {
 
         if (setting) {
             var initialTransport = setting.transport;
-            setting.transport = 'postMessage';
-            setting.set(headerData[setting_id]);
-            setting.transport = initialTransport;
+            setting.transport = "refresh";
 
-            var control = setting.findControls()[0];
-            if (control && typeof control.rerender === 'function') {
-                control.rerender();
+            var settingValue = headerData[setting_id];
+            if (_.isObject(settingValue) || _.isArray(settingValue)) {
+                settingValue = encodeURIComponent(JSON.stringify(settingValue));
             }
+
+            updateMediaControl(setting_id, settingValue);
+
+            setting.set(settingValue);
+            setting.transport = initialTransport;
         }
     }
 
-    top.wp.customize.requestChangesetUpdate({}, { autosave: true }).done(refresh);
+    setTimeout(function () {
+        top.wp.customize.requestChangesetUpdate({}, { autosave: true }).done(function () {
+            api.previewer.refresh();
+        });
+    }, 100);
+}
+
+function updateMediaControl(settingId, settingValue) {
+    var control = wp.customize(settingId).findControls()[0];
+    var mediaTypes = ["image", "video"];
+    var controlType = _.get(control || {}, ["params", "mime_type"]);
+    if (!control || !mediaTypes.includes(controlType)) {
+        return;
+    }
+    var newAttachment = {
+        id: -1,
+        url: settingValue,
+        type: controlType,
+        icon: _.get(control, ["params", "attachment", "icon"]),
+        title: settingValue
+    };
+
+    if (controlType === "image") {
+        var newSizes = {
+            full: {
+                url: settingValue
+            }
+        };
+        newAttachment.sizes = newSizes;
+    }
+
+    control.params.attachment = newAttachment;
 }
 
 api.bind('ready', function () {
@@ -78209,7 +78243,7 @@ api.bind('ready', function () {
 
                 var img_url = headers[key].image;
 
-                var li = "" + ('<li class="colibri-preset" data-name="' + key + '">') + ('  <img src=\'' + img_url + '\'/>') + '</li>';
+                var li = "" + ("<li class=\"colibri-preset\" data-name=\"" + key + "\">") + ("  <img src='" + img_url + "'/>") + "</li>";
 
                 $ul.append(li);
             }

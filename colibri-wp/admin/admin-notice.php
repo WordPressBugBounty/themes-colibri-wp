@@ -5,7 +5,46 @@ use ColibriWP\Theme\Defaults;
 
 $colibriwp_front_page_designs = array();
 
-foreach ( Defaults::get( 'front_page_designs', array() ) as $colibriwp_current_design ) {
+$default_front_page_designs =   array(
+
+    array(
+        'name'  =>  __("Modern", 'colibri-wp'),
+        "index" => 3,
+        "meta"  => array(
+            "slug"    => "modern",
+            "version" => "v2"
+        )
+    ),
+
+    array(
+        'name'    =>  __("Modern", 'colibri-wp'),
+        "index"   => 3,
+        "display" => false,
+        "meta"    => array(
+            "slug"    => "modern",
+            "version" => "v1"
+        )
+    ),
+
+    array(
+        'name'  => __("Classic",'colibri-wp'),
+        "index" => 2,
+        "meta"  => array(
+            "slug"    => "classic",
+            "version" => "v1"
+        )
+    ),
+
+    array(
+        'name'  =>  __("Fullscreen", 'colibri-wp'),
+        "index" => 1,
+        "meta"  => array(
+            "slug"    => "fullscreen",
+            "version" => "v1"
+        )
+    ),
+);
+foreach ( $default_front_page_designs as $colibriwp_current_design ) {
     if ( \ColibriWP\Theme\Core\Utils::pathGet( $colibriwp_current_design, 'display', true ) ) {
         $colibriwp_front_page_designs[] = $colibriwp_current_design;
     }

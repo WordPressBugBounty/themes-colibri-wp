@@ -36,7 +36,8 @@ class Theme {
         $this->plugins_manager = new PluginsManager( $this );
 
         add_action( 'after_setup_theme', array( $this, 'afterSetup' ), 20 );
-
+        add_action('init', array($this, 'onInitHook'));
+        add_action('widgets_init', array($this, 'doInitWidgets'));
     }
 
     public static function load() {
@@ -112,24 +113,22 @@ class Theme {
         return $params;
     }
 
+
     public function afterSetup() {
 
         Defaults::load();
         Translations::load();
 
-        $this->registerMenus();
+
 
         $this->repository->load();
         $this->customizer->boot();
         $this->assets_manager->boot();
         $this->plugins_manager->boot();
 
-        // hooks for handling the widget content wrapping
-        add_action( 'register_sidebar', array( $this, 'modifyRegisteredSidebar' ) );
-        add_filter( 'dynamic_sidebar_params', array( $this, 'wrapWidgetsContent' ) );
 
 
-        add_action( 'widgets_init', array( $this, 'doInitWidgets' ) );
+
         add_action( 'admin_menu', array( $this, 'addThemeInfoPage' ) );
         add_action( 'admin_notices', array( $this, 'addThemeNotice' ) );
 
@@ -144,6 +143,15 @@ class Theme {
 
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueueAdminScripts' ), 0 );
         add_action('wp_footer', array($this, 'addWooMyAccountIcons'));
+    }
+
+    public function onInitHook() {
+        $this->registerMenus();
+
+        add_filter( 'dynamic_sidebar_params', array( $this, 'wrapWidgetsContent' ) );
+        // hooks for handling the widget content wrapping
+        add_action( 'register_sidebar', array( $this, 'modifyRegisteredSidebar' ) );
+
     }
 
 

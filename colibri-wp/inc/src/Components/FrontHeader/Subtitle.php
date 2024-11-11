@@ -19,7 +19,7 @@ class Subtitle extends ComponentBase {
      */
     protected static function getOptions() {
         $prefix = static::$settings_prefix;
-
+        $default_content = apply_filters('colibri_theme_subtitle_default_content', Defaults::get( "lorem_ipsum"));
         return array(
             "sections" => array(
                 "{$prefix}section" => array(
@@ -44,7 +44,7 @@ class Subtitle extends ComponentBase {
 
                 ),
                 "{$prefix}localProps.content" => array(
-                    'default' => Defaults::get( "lorem_ipsum" ),
+                    'default' => $default_content,
                     'control' => array(
                         'label'       => Translations::get( 'subtitle' ),
                         'type'        => 'input',

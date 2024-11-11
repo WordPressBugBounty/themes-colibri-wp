@@ -17,7 +17,29 @@ class ButtonsGroup extends ComponentBase {
 	 */
 	protected static function getOptions() {
 		$prefix = static::$settings_prefix;
+        $defaultValue = Defaults::get( "{$prefix}value" );
 
+        //in wp 6.7 we can't add translation before the init hook
+        $colibriwp_theme_action_button = __('Action Button %d', 'colibri-wp');
+        $translatedDefaultValue =  array(
+            array(
+                'label'       => sprintf( $colibriwp_theme_action_button, 1 ),
+
+            ),
+            array(
+                'label'       => sprintf( $colibriwp_theme_action_button, 2 ),
+
+            ),
+        );
+        $defaultValueArr = json_decode($defaultValue, true);
+        if(is_array($defaultValueArr)) {
+            foreach($defaultValueArr as $key => $value) {
+                if(isset($value['label']) && isset($translatedDefaultValue[$key]) && isset($translatedDefaultValue[$key]['label'])) {
+                    $defaultValueArr[$key]['label'] = $translatedDefaultValue[$key]['label'];
+                }
+            }
+        }
+        $defaultValue = json_encode($defaultValueArr);
 		return array(
 			"sections" => array(
 				"{$prefix}section" => array(
@@ -42,7 +64,7 @@ class ButtonsGroup extends ComponentBase {
 
 				),
 				"{$prefix}value" => array(
-					'default' => Defaults::get( "{$prefix}value" ),
+					'default' => $defaultValue,
 					'control' => array(
 						'label'          => Translations::get( 'buttons' ),
 						'type'           => 'repeater',

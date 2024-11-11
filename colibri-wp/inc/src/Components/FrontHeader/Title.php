@@ -19,6 +19,13 @@ class Title extends ComponentBase {
      */
     protected static function getOptions() {
         $prefix = static::$settings_prefix;
+        $colibriwp_theme_click_pen_to_edit_title = __( 'Click the pencil icon to edit the text', 'colibri-wp' );
+
+        if ( apply_filters( 'colibri_page_builder/installed', false ) ) {
+            $colibriwp_theme_click_pen_to_edit_title = __( 'Just click and start typing to change the site headline.',
+                'colibri-wp' );
+        }
+        $colibriwp_theme_click_pen_to_edit_title = apply_filters('colibri_theme_title_default_content', $colibriwp_theme_click_pen_to_edit_title);
 
         return array(
             "sections" => array(
@@ -44,7 +51,7 @@ class Title extends ComponentBase {
 
                 ),
                 "{$prefix}localProps.content" => array(
-                    'default' => Defaults::get( "edit_this_text_in_customizer" ),
+                    'default' => $colibriwp_theme_click_pen_to_edit_title,
                     'control' => array(
                         'label'       => Translations::get( 'title' ),
                         'type'        => 'input',

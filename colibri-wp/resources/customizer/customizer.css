@@ -16233,6 +16233,11 @@ body {
   }
 }
 
+#customize-controls {
+  /* WP 6.7 fixes */
+  /* end */
+}
+
 #customize-controls .control-panel-colibri_panel[id="accordion-panel-header_panel"] li,
 #customize-controls .control-panel-colibri_panel[id="accordion-panel-content_panel"] li,
 #customize-controls .control-panel-colibri_panel[id="accordion-panel-footer_panel"] li {
@@ -16330,6 +16335,14 @@ body {
   border-left-color: transparent !important;
   background-color: #fff !important;
   color: inherit !important;
+}
+
+#customize-controls .customize-pane-parent {
+  overflow-x: hidden !important;
+}
+
+#customize-controls .accordion-section-title:has(button.accordion-trigger) button.accordion-trigger {
+  height: auto;
 }
 
 #customize-controls .control-panel-colibri_panel li.control-section-colibri_section {

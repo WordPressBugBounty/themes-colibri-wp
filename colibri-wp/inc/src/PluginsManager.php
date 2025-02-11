@@ -24,6 +24,17 @@ class PluginsManager {
         if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
             require_once get_template_directory() . "/inc/class-tgm-plugin-activation.php";
         }
+        if ( ! function_exists( 'plugins_api' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+        }
+
+        if ( ! function_exists( 'get_plugins' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/plugin.php';
+        }
+
+        if ( ! function_exists( 'request_filesystem_credentials' ) ) {
+            require_once ABSPATH . 'wp-admin/includes/file.php';
+        }
         $this->theme = $theme;
     }
 
@@ -130,8 +141,11 @@ class PluginsManager {
             if ( $slug && $path ) {
                 $ac   = get_option( 'active_plugins' );
                 $ac[] = $path;
-                update_option( 'active_plugins', array_unique( $ac ) );
-
+              //  update_option( 'active_plugins', array_unique( $ac ) );
+                $activate_result = $this->activatePlugin($slug);
+                if($activate_result !== true) {
+                    wp_send_json_error( array( 'error' => $activate_result) );
+                }
                 $data = apply_filters( 'colibri_page_builder/plugin-activated', array(), $slug,
                     $this->getPluginData( $slug ) );
 
@@ -238,5 +252,25 @@ class PluginsManager {
                 '_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $path ),
             ), network_admin_url( 'plugins.php' ) );
         }
+    }
+    public function getPluginBaseName( $slug ) {
+        $plugins = get_plugins();
+
+        foreach ( array_keys( $plugins ) as $key ) {
+            if ( preg_match( '/^' . $slug . '\//', $key ) ) {
+                return $key;
+            }
+        }
+
+        return false;
+    }
+    public function activatePlugin( $slug, $silent = false ) {
+        $result = activate_plugin( $this->getPluginBaseName( $slug ), '', false, $silent );
+
+        if ( is_wp_error( $result ) ) {
+            return $result;
+        }
+
+        return true;
     }
 }

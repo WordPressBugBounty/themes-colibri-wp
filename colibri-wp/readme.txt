@@ -3,14 +3,14 @@
 Contributors: extendthemes
 Tags: entertainment, food-and-drink, portfolio, one-column, two-columns, right-sidebar, grid-layout, custom-header, custom-menu, custom-logo, full-width-template, theme-options, translation-ready, featured-images, threaded-comments
 Requires at least: 5.6
-Tested up to: 6.7
+Tested up to: 6.8
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Requires PHP: 5.6
 
 == Description ==
 
-Colibri is a beautiful, extremely customizable, multipurpose theme that you can use to create an amazing website by drag and drop. It comes with a predesigned home page, 5 header designs and over 35 ready to use content blocks that you can easily customize. You can also design your own custom blocks by combining over 25 drag and drop components. Colibri has lots of customization options (video background, slideshow background, header content types, etc) that will help you create a website that stands out in no time. It is also responsive so it works on mobile devices out of the box. Colibri is the only theme you will ever need! CHECK OUT THE DEMOS: https://colibriwp.com/go/demos
+A beautiful, very customizable, multipurpose theme that you can use to create amazing websites through drag and drop. It comes with a pre-designed home page, 5 header designs and over 35 ready-to-use content blocks that you can easily customize. You can also design your own custom blocks by combining more than 25 drag and drop components. It offers lots of customization options (video background, slideshow background, header content types, etc) to help you create a website that stands out in no time. It is also designed with responsiveness, to work on mobile devices right out of the box. It is the only theme you will ever need! CHECK OUT THE DEMOS: https://colibriwp.com/go/demos
 
 
 == Frequently Asked Questions ==
@@ -169,7 +169,7 @@ The exceptions to this license are as follows:
 * Google Fonts:
 
    Open Sans (https://fonts.google.com/specimen/Open+Sans)
-   Licensed under Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+   Licensed under SIL Open Font License, 1.1 (https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
    Copyright © Steve Matteson
 
    Muli (https://fonts.google.com/specimen/Muli)

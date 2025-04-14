@@ -119,7 +119,7 @@ class NavBarStyle extends PartialComponent {
 					),
 				),
 
-				"{$prefix}props.sticky" => array(
+				/*"{$prefix}props.sticky" => array(
 					'default'   => Defaults::get( "{$prefix}props.sticky" ),
 					'control'   => array(
 						'label'       => Translations::get( 'stick_to_top' ),
@@ -136,7 +136,7 @@ class NavBarStyle extends PartialComponent {
 
 					),
 
-				),
+				),*/
 
 //				"{$prefix}props.overlap" => array(
 //					'default'   =>  Defaults::get( "{$prefix}props.overlap" ),

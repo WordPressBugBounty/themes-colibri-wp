@@ -1,4 +1,5 @@
 <?php
+use ColibriWP\SiteLeadsThemeKit\SiteLeads;
 
 return array(
 
@@ -239,11 +240,12 @@ return array(
     "footer_parallax" => __( 'Use footer parallax', 'colibri-wp' ),
 
     //plugin
-
-    "plugin_message"            => __( 'To enable all the theme features, please install %s plugin',
-        'colibri-wp' ),
-    "install_with_placeholder"  => __( 'Install %s', 'colibri-wp' ),
+    "plugin_message"            => __( 'To enable all the theme features, please install %s plugin', 'colibri-wp' ),
+    "plugin_message_siteleads"            => __( 'To enable all the theme features, please install %s and Siteleads plugins', 'colibri-wp' ),
+    "install_with_placeholder"  =>   __( 'Install %s', 'colibri-wp' ),
+    "install_with_placeholder_siteleads"  =>  __( 'Enable all theme features', 'colibri-wp' ),
     "activate_with_placeholder" => __( 'Activate %s', 'colibri-wp' ),
+    "activate_with_placeholder_siteleads" =>  __( 'Enable all theme features', 'colibri-wp' ),
 
     //blog
 
@@ -303,9 +305,8 @@ return array(
     'change_header_design'                    => __( 'Choose header design', 'colibri-wp' ),
     'change_footer_design'                    => __( 'Choose footer design', 'colibri-wp' ),
     'add_section'                             => __( 'Add Predefined Section', 'colibri-wp' ),
-    'start_with_a_front_page_plugin_info'     => __( 'These actions will also install Colibri Page Builder plugin.',
-        'colibri-wp' ),
-
+    'start_with_a_front_page_plugin_info'     =>      __( 'These actions will also install Colibri Page Builder  plugin.', 'colibri-wp' ),
+    'start_with_a_front_page_plugin_info_siteleads'     =>   __( 'These actions will also install Colibri Page Builder and Siteleads plugins.', 'colibri-wp' ),
     'undefined_sanitize_function_for_control'     => __( 'Undefined sanitize function for control "%s"',
         'colibri-wp' ),
 );

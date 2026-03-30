@@ -1,5 +1,6 @@
 <?php
 
+use ColibriWP\SiteLeadsThemeKit\SiteLeads;
 use ColibriWP\Theme\Core\Hooks;
 use ColibriWP\Theme\Defaults;
 
@@ -101,7 +102,24 @@ foreach ( $default_front_page_designs as $colibriwp_current_design ) {
             </div>
         </div>
         <div>
-            <p class="description large-text"><?php \ColibriWP\Theme\Translations::escHtmlE( 'start_with_a_front_page_plugin_info' ); ?></p>
+            <div class="description large-text">
+                <?php
+                if(  SiteLeads::show_install_siteleads_recommendation()) {
+                    esc_html_e(
+                        sprintf(
+                            __( 'This action will install the %s recommended', 'colibri-wp' ),
+                            SiteLeads::get_current_theme_name()
+                        )
+                    );
+                    SiteLeads::printSiteLeadsRecommendationPlugins();
+                } else {
+                    \ColibriWP\Theme\Translations::escHtmlE( 'start_with_a_front_page_plugin_info' );
+                }
+
+                ?>
+
+
+            </div>
         </div>
     </div>
     <script type="text/javascript">
@@ -129,6 +147,7 @@ foreach ( $default_front_page_designs as $colibriwp_current_design ) {
                 "activating" => \ColibriWP\Theme\Translations::get( 'activating',
                     'Colibri Page Builder' )
             ),
+            'siteLeads' => \ColibriWP\SiteLeadsThemeKit\SiteLeads::get_instance()->get_js_data(),
         ); ?>
         var colibriwp_builder_status = <?php echo wp_json_encode( $colibriwp_builder_status ); ?>;
     </script>

@@ -4,6 +4,7 @@
 namespace ColibriWP\Theme\Customizer\Controls;
 
 
+use ColibriWP\SiteLeadsThemeKit\SiteLeads;
 use ColibriWP\Theme\Core\Hooks;
 use ColibriWP\Theme\PluginsManager;
 use ColibriWP\Theme\Translations;
@@ -18,14 +19,29 @@ class PluginMessageControl extends VueControl {
 
         ?>
         <div class="plugin-message card">
-            <p>
-                <?php echo Translations::get( 'plugin_message', 'Colibri Page Builder' ); ?>
-            </p>
+            <div class="colibri-install-plugin-description">
+                <?php
+                if(  SiteLeads::show_install_siteleads_recommendation()) {
+                    esc_html_e(
+                        sprintf(
+                            __( 'To enable all theme features, please Install the %s recommended', 'colibri-wp' ),
+                            SiteLeads::get_current_theme_name()
+                        )
+                    );
+                    SiteLeads::printSiteLeadsRecommendationPlugins();
+                } else {
+                    echo  Translations::get( 'plugin_message', 'Colibri Page Builder' );
+                }
+
+                ?>
+            </div>
             <?php if ( colibriwp_theme()->getPluginsManager()->getPluginState( $this->getBuilderSlug() ) === PluginsManager::NOT_INSTALLED_PLUGIN ): ?>
                 <button data-colibri-plugin-action="install"
                         class="el-button el-link h-col el-button--primary el-button--small"
                         style="text-decoration: none">
-                    <?php echo Translations::get( 'install_with_placeholder', 'Colibri Page Builder' ); ?>
+                    <?php echo SiteLeads::show_install_siteleads_recommendation() ?
+                        Translations::get( 'install_with_placeholder_siteleads', 'Colibri Page Builder' ) :
+                        Translations::get( 'install_with_placeholder', 'Colibri Page Builder' ); ?>
                 </button>
             <?php endif; ?>
 
@@ -33,7 +49,9 @@ class PluginMessageControl extends VueControl {
                 <button data-colibri-plugin-action="activate"
                         class="el-button el-link h-col el-button--primary el-button--small"
                         style="text-decoration: none">
-                    <?php echo Translations::get( 'activate_with_placeholder', 'Colibri Page Builder' ); ?>
+                    <?php echo SiteLeads::show_install_siteleads_recommendation() ?
+                        Translations::get( 'activate_with_placeholder_siteleads', 'Colibri Page Builder' ) :
+                        Translations::get( 'activate_with_placeholder', 'Colibri Page Builder' ); ?>
                 </button>
             <?php endif; ?>
 

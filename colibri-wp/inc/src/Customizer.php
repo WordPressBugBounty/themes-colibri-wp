@@ -362,7 +362,8 @@ class Customizer {
                 'colibriwp_disable_big_notice_nonce' => wp_create_nonce('colibriwp_disable_big_notice_nonce'),
                 'colibri_autofocus'         => Utils::pathGet( $_REQUEST, 'colibri_autofocus' ),
                 'colibri_autofocus_aliases' => (object) Hooks::colibri_apply_filters( 'customizer_autofocus_aliases',
-                    array() )
+                    array() ),
+                'siteLeads' => \ColibriWP\SiteLeadsThemeKit\SiteLeads::get_instance()->get_js_data(),
             ) ) );
 
         wp_register_style( Hooks::HOOK_PREFIX . "customizer",

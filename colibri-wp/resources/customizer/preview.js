@@ -60,12 +60,12 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 366);
+/******/ 	return __webpack_require__(__webpack_require__.s = 369);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 100:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -272,7 +272,7 @@ exports.default = runJs;
 
 /***/ }),
 
-/***/ 101:
+/***/ 104:
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/* global window, exports, define */
@@ -511,7 +511,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* global window, exports, define */
 
 /***/ }),
 
-/***/ 102:
+/***/ 105:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -578,15 +578,15 @@ function compare(value1, value2, operator) {
 
 /***/ }),
 
-/***/ 366:
+/***/ 369:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(367);
+module.exports = __webpack_require__(370);
 
 
 /***/ }),
 
-/***/ 367:
+/***/ 370:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -594,15 +594,15 @@ module.exports = __webpack_require__(367);
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(368);
-
-__webpack_require__(369);
-
-__webpack_require__(370);
-
 __webpack_require__(371);
 
 __webpack_require__(372);
+
+__webpack_require__(373);
+
+__webpack_require__(374);
+
+__webpack_require__(375);
 
 __webpack_require__(91);
 
@@ -633,7 +633,7 @@ window.ColibriCustomizerPreviewer = ColibriCustomizerPreviewer;
 
 /***/ }),
 
-/***/ 368:
+/***/ 371:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -647,13 +647,13 @@ window.ColibriCustomizerPreviewer = ColibriCustomizerPreviewer;
 
 /***/ }),
 
-/***/ 369:
+/***/ 372:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _compare = __webpack_require__(102);
+var _compare = __webpack_require__(105);
 
 var _compare2 = _interopRequireDefault(_compare);
 
@@ -665,7 +665,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var $ = jQuery,
     domready = __webpack_require__(38),
-    sprintf = __webpack_require__(101).sprintf;
+    sprintf = __webpack_require__(104).sprintf;
 
 function isSettingActive(key) {
     if (!colibri_CONTROLS_ACTIVE_RULES[key]) {
@@ -866,13 +866,13 @@ domready(function () {
 
 /***/ }),
 
-/***/ 370:
+/***/ 373:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _jsHelpers = __webpack_require__(100);
+var _jsHelpers = __webpack_require__(103);
 
 var _jsHelpers2 = _interopRequireDefault(_jsHelpers);
 
@@ -897,7 +897,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /***/ }),
 
-/***/ 371:
+/***/ 374:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1010,7 +1010,7 @@ selectiveRefresh.Partial = selectiveRefresh.Partial.extend({
 
 /***/ }),
 
-/***/ 372:
+/***/ 375:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

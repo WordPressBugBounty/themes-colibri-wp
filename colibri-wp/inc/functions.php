@@ -414,3 +414,5 @@ function colibriwp_override_main_row_class( $classes ) {
 }
 
 Hooks::colibri_add_filter( 'main_row_class', 'colibriwp_override_main_row_class', 10, 1 );
+
+require_once __DIR__ . '/siteleads-integration/index.php';

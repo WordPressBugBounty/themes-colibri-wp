@@ -1,0 +1,14 @@
+.siteleads-fc-widgets .customize-partial-edit-shortcut {
+  z-index: 999999999;
+  right: 0;
+  left: unset !important;
+  top: 50% !important;
+  bottom: unset !important;
+}
+.siteleads-fc-widgets .customize-partial-edit-shortcut button {
+  left: -68px;
+  top: -34px;
+}
+body.colibri-in-customizer--loaded .customize-partial-edit-shortcut {
+  display: block;
+}

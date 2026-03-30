@@ -74,6 +74,125 @@
   }
 }
 
+.colibriwp-siteleads-recommendation-plugins-tooltip__container {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 5px;
+}
+
+.colibriwp-siteleads-recommendation-plugins-tooltip {
+  line-height: 0;
+  position: relative;
+}
+
+.colibriwp-siteleads-recommendation-plugins-tooltip__content {
+  position: absolute;
+  line-height: 1.4;
+  width: 350px;
+  max-height: 500px;
+  bottom: 100%;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  left: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  margin-bottom: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  -webkit-box-shadow: 0 2px 18px 5px rgba(73, 104, 126, 0.2);
+          box-shadow: 0 2px 18px 5px rgba(73, 104, 126, 0.2);
+  border-radius: 4px;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+  text-align: left;
+  font-size: 11px;
+  z-index: 9999999999;
+  -webkit-animation: colibriwp-plugins-tooltip-fade-in 0.3s ease-in-out;
+          animation: colibriwp-plugins-tooltip-fade-in 0.3s ease-in-out;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.colibriwp-siteleads-recommendation-plugins-tooltip:hover .colibriwp-siteleads-recommendation-plugins-tooltip__content {
+  pointer-events: initial;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.colibriwp-siteleads-recommendation-plugins-tooltip__item__title {
+  font-weight: 600;
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+.colibriwp-siteleads-recommendation-plugins-tooltip__item__description {
+  font-weight: 400;
+  font-size: 13px;
+}
+
+#customize-controls .customize-control-ope-info {
+  position: relative;
+}
+
+#customize-controls .colibriwp-siteleads-recommendation-plugins-tooltip {
+  position: static;
+}
+
+#customize-controls .colibriwp-siteleads-recommendation-plugins-tooltip__content {
+  -webkit-transform: none;
+          transform: none;
+  width: auto;
+}
+
+@-webkit-keyframes colibriwp-plugins-tooltip-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes colibriwp-plugins-tooltip-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.colibri-install-plugin-description {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 1em 0;
+}
+
+.colibri-admin-big-notice div.description.large-text {
+  font-size: 13px;
+  margin: 2px 0 5px;
+  color: #646970;
+  margin-top: 1em;
+  padding: 2px;
+  line-height: 1.5;
+}
+
 .update-nag {
   display: none;
 }

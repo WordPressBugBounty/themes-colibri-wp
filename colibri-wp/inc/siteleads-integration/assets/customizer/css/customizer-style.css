@@ -1,0 +1,102 @@
+.colibriwp-siteleads-integration-button.components-button:not(#extra-1) {
+  background: linear-gradient(180deg, #2758E5 0%, #A041F7 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px;
+  height: auto;
+  border-radius: var(--rounded-8, 8px);
+  /* shadow-lg */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+.colibriwp-siteleads-integration-button.components-button:not(#extra-1):hover {
+  opacity: 0.8;
+}
+.colibriwp-siteleads-integration-button.components-button:not(#extra-1).colibriwp-loading {
+  opacity: 0.5 !important;
+  cursor: not-allowed;
+}
+.colibriwp-siteleads-integration-button__container {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+  color: #0A0A0A;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(180deg, rgba(39, 88, 229, 0.05) 0%, rgba(160, 65, 247, 0.05) 100%), #FFF;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.colibriwp-siteleads-integration-button__description {
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.colibriwp-siteleads-integration-button__description_2 {
+  font-weight: 500;
+}
+.colibriwp-siteleads-integration-button__icon {
+  margin-bottom: -10px;
+}
+.colibriwp-siteleads-integration-button__icon svg {
+  width: 100%;
+  height: auto;
+}
+.colibriwp-siteleads-integration-button__logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+.colibriwp-siteleads-integration-button__logo__container {
+  position: relative;
+  width: 100%;
+}
+.colibriwp-siteleads-integration-button__title {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+.colibriwp-siteleads-integration-button__title span {
+  background: linear-gradient(180deg, #2758E5 0%, #A041F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+.colibriwp-siteleads-integration-button__notice {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  text-align: left;
+  align-items: center;
+  gap: 10px;
+}
+.colibriwp-siteleads-integration-button__notice .spinner {
+  margin: 0;
+}
+.colibriwp-siteleads-integration-button__notice--info {
+  border: 1px solid #0284C7;
+  background: #EFF6FF;
+  color: #0284C7;
+}
+.colibriwp-siteleads-integration-button__notice--error {
+  border: 1px solid #EF4444;
+  background: #FEF2F2;
+  color: #DC2626;
+}
+.accordion-section-content[id*=siteleads_contact_settings] input[type=checkbox] {
+  font-size: 14px;
+  bottom: unset;
+  margin-right: 4px;
+}

@@ -268,7 +268,7 @@ class Theme {
 	          wp_localize_script( $slug, 'colibri_get_started', $colibri_get_started );
 
             ?>
-            <div class="notice notice-success is-dismissible colibri-admin-big-notice notice-large">
+            <div class="notice notice-success colibri-notice  is-dismissible colibri-admin-big-notice notice-large">
                 <?php View::make( "admin/admin-notice" ); ?>
             </div>
             <?php

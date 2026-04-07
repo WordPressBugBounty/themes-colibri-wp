@@ -55,7 +55,7 @@ class PluginMessageControl extends VueControl {
                 </button>
             <?php endif; ?>
 
-            <p class="notice notice-large" data-colibri-plugin-action-message="1" style="display: none"></p>
+            <p class="notice notice-large colibri-notice" data-colibri-plugin-action-message="1" style="display: none"></p>
         </div>
         <?php
     }

@@ -27,7 +27,7 @@ function colibriwp_check_php_version() {
 
 function colibriwp_php_version_notice() {
 	?>
-    <div class="notice notice-alt notice-error notice-large">
+    <div class="notice notice-alt colibri-notice notice-error notice-large">
         <h4><?php esc_html_e( 'Colibri theme activation failed!', 'colibri-wp' ); ?></h4>
         <p>
 			<?php printf( esc_html__( 'You need to update your PHP version to use the %s.', 'colibri-wp' ),

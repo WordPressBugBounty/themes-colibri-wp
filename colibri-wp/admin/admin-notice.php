@@ -147,7 +147,9 @@ foreach ( $default_front_page_designs as $colibriwp_current_design ) {
                 "activating" => \ColibriWP\Theme\Translations::get( 'activating',
                     'Colibri Page Builder' )
             ),
-            'siteLeads' => \ColibriWP\SiteLeadsThemeKit\SiteLeads::get_instance()->get_js_data(),
+            'siteLeads' => SiteLeads::get_instance()->get_js_data(
+                ['startSource' => 'theme-notice']
+            ),
         ); ?>
         var colibriwp_builder_status = <?php echo wp_json_encode( $colibriwp_builder_status ); ?>;
     </script>

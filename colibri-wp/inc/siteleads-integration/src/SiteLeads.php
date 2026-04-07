@@ -494,7 +494,7 @@ class SiteLeads {
         return 'not-installed';
     }
 
-    public function get_js_data() {
+    public function get_js_data($extra_settings_data = []) {
 
         $plugin_slug = static::PLUGIN_SLUG;
         $pro_plugin_status = $this->get_plugin_status(static::PRO_PLUGIN_FILE);
@@ -522,6 +522,10 @@ class SiteLeads {
             'translations'                       => $this->get_js_text_translations(),
             'siteLeadsIntegrationIsEnabled'      => static::show_install_siteleads_recommendation(),
         );
+
+        if(is_array($extra_settings_data) && !empty($extra_settings_data)) {
+            $site_leads_settings = array_merge($site_leads_settings, $extra_settings_data);
+        }
 
         return $site_leads_settings;
     }

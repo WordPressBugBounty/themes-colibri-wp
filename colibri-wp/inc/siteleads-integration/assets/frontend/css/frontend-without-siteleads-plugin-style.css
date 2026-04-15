@@ -20,6 +20,11 @@
   content: none;
   box-sizing: border-box;
 }
+@media (max-width: 1000px) {
+  .siteleads-is-customizer-preview .colibriwp-siteleads-for-theme-root:not(#extra-1):not(#extra-1) {
+    display: none !important;
+  }
+}
 .colibriwp-siteleads-for-theme-root * * > * {
   font-family: inherit;
   direction: ltr;

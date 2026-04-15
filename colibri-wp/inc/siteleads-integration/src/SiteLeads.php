@@ -39,6 +39,7 @@ class SiteLeads {
         add_action( 'wp_footer', array( $this, 'print_call_icon_no_site_leads' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_assets' ) );
 
+    add_filter('body_class', array($this, 'addCustomizerPreviewClass'));
     }
 
 
@@ -94,7 +95,7 @@ class SiteLeads {
             Theme::prefix( 'siteleads-style' ),
             Theme::get_url_path( '/assets/frontend/css/frontend-style.min.css' )
         );
-        if ( $this->should_show_contact_widge_no_site_leads_active() ) {
+        if ( $this->should_show_contact_widget_no_site_leads_active() ) {
             wp_enqueue_style(
                 Theme::prefix( 'siteleads-style-no-plugin' ),
                 Theme::get_url_path( '/assets/frontend/css/frontend-without-siteleads-plugin-style.min.css' )
@@ -168,7 +169,7 @@ class SiteLeads {
     }
 
     public function print_call_icon_no_site_leads() {
-        if ( ! $this->should_show_contact_widge_no_site_leads_active() ) {
+        if ( ! $this->should_show_contact_widget_no_site_leads_active() ) {
             return;
         }
         $phone = get_theme_mod( Theme::prefix( 'siteleads_number' ), '' );
@@ -407,7 +408,7 @@ class SiteLeads {
                 'section'     => Theme::prefix( 'contact_settings' ),
                 'type'        => 'text',
                 'priority'    => 10,
-                'active_callback' => array( $this, 'is_siteleads_inactive' ),
+                'active_callback' => array( $this, 'get_phone_number_control_is_visible' ),
             )
         );
 
@@ -427,7 +428,8 @@ class SiteLeads {
                 'label'    => __( 'Show Contact Widget', 'colibri-wp' ),
                 'section'  => Theme::prefix( 'contact_settings' ),
                 'type'     => 'checkbox',
-                'priority' => 9
+                'priority' => 9,
+                'active_callback' => array( $this, 'get_show_phone_widget_control_is_visible' ),
             )
         );
 
@@ -447,6 +449,27 @@ class SiteLeads {
             );
         }
     }
+    public function get_show_phone_widget_control_is_visible() {
+        if($this->get_site_leads_plugin_is_active()) {
+            return true;
+        }
+
+        $siteleads_inited = Flags::get( 'siteLeadsInstalled', false );
+
+        //if siteleads was inited and the plugin is not active anymore do not show it anymore.
+        return !$siteleads_inited;
+    }
+    public function get_phone_number_control_is_visible() {
+        if($this->get_site_leads_plugin_is_active()) {
+            return false;
+        }
+
+        $siteleads_inited = Flags::get( 'siteLeadsInstalled', null );
+
+        //if siteleads was inited and the plugin is not active anymore do not show it anymore.
+        return !$siteleads_inited;
+    }
+
 
     /**
      * Allow numbers, spaces and common phone symbols
@@ -566,9 +589,14 @@ class SiteLeads {
 
 
 
-    public function should_show_contact_widge_no_site_leads_active() {
+    public function should_show_contact_widget_no_site_leads_active() {
         $site_leads_is_active = defined( 'SITELEADS_VERSION' );
         if ( $site_leads_is_active ) {
+            return false;
+        }
+
+        //if siteleads was inited do not show the contact widget anymore.
+        if( Flags::get( 'siteLeadsInstalled', null )) {
             return false;
         }
         if ( ! is_customize_preview() ) {
@@ -597,5 +625,12 @@ class SiteLeads {
             }
         }
         return $is_active;
+    }
+
+    public function addCustomizerPreviewClass($classes) {
+        if (is_customize_preview()) {
+            $classes[] = 'siteleads-is-customizer-preview';
+        }
+        return $classes;
     }
 }

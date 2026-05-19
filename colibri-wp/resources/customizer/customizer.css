@@ -15982,6 +15982,375 @@ p.has-fit-text.wp-block-paragraph {
 
 /*end*/
 
+/** wp7.0 fixes start*/
+
+:where(.sidebar-section-list),
+:where(.colibri-selection-panel),
+:where(.control-panel-colibri_panel),
+:where(.el-popover),
+:where(.el-color-picker__panel),
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) {
+  --wp-block-synced-color: #7a00df;
+  --wp-block-synced-color--rgb: 122, 0, 223;
+  --wp-bound-block-color: var(--wp-block-synced-color);
+  --wp-editor-canvas-background: #ddd;
+  --wp-admin-theme-color: #007cba;
+  --wp-admin-theme-color--rgb: 0, 124, 186;
+  --wp-admin-theme-color-darker-10: #006ba1;
+  --wp-admin-theme-color-darker-10--rgb: 0, 107, 161;
+  --wp-admin-theme-color-darker-20: #005a87;
+  --wp-admin-theme-color-darker-20--rgb: 0, 90, 135;
+}
+
+:where(.sidebar-section-list) input[type="date"],
+:where(.sidebar-section-list) input[type="datetime-local"],
+:where(.sidebar-section-list) input[type="datetime"],
+:where(.sidebar-section-list) input[type="email"],
+:where(.sidebar-section-list) input[type="month"],
+:where(.sidebar-section-list) input[type="number"],
+:where(.sidebar-section-list) input[type="password"],
+:where(.sidebar-section-list) input[type="search"],
+:where(.sidebar-section-list) input[type="tel"],
+:where(.sidebar-section-list) input[type="text"],
+:where(.sidebar-section-list) input[type="time"],
+:where(.sidebar-section-list) input[type="url"],
+:where(.sidebar-section-list) input[type="week"],
+:where(.sidebar-section-list) select,
+:where(.colibri-selection-panel) input[type="date"],
+:where(.colibri-selection-panel) input[type="datetime-local"],
+:where(.colibri-selection-panel) input[type="datetime"],
+:where(.colibri-selection-panel) input[type="email"],
+:where(.colibri-selection-panel) input[type="month"],
+:where(.colibri-selection-panel) input[type="number"],
+:where(.colibri-selection-panel) input[type="password"],
+:where(.colibri-selection-panel) input[type="search"],
+:where(.colibri-selection-panel) input[type="tel"],
+:where(.colibri-selection-panel) input[type="text"],
+:where(.colibri-selection-panel) input[type="time"],
+:where(.colibri-selection-panel) input[type="url"],
+:where(.colibri-selection-panel) input[type="week"],
+:where(.colibri-selection-panel) select,
+:where(.control-panel-colibri_panel) input[type="date"],
+:where(.control-panel-colibri_panel) input[type="datetime-local"],
+:where(.control-panel-colibri_panel) input[type="datetime"],
+:where(.control-panel-colibri_panel) input[type="email"],
+:where(.control-panel-colibri_panel) input[type="month"],
+:where(.control-panel-colibri_panel) input[type="number"],
+:where(.control-panel-colibri_panel) input[type="password"],
+:where(.control-panel-colibri_panel) input[type="search"],
+:where(.control-panel-colibri_panel) input[type="tel"],
+:where(.control-panel-colibri_panel) input[type="text"],
+:where(.control-panel-colibri_panel) input[type="time"],
+:where(.control-panel-colibri_panel) input[type="url"],
+:where(.control-panel-colibri_panel) input[type="week"],
+:where(.control-panel-colibri_panel) select,
+:where(.el-popover) input[type="date"],
+:where(.el-popover) input[type="datetime-local"],
+:where(.el-popover) input[type="datetime"],
+:where(.el-popover) input[type="email"],
+:where(.el-popover) input[type="month"],
+:where(.el-popover) input[type="number"],
+:where(.el-popover) input[type="password"],
+:where(.el-popover) input[type="search"],
+:where(.el-popover) input[type="tel"],
+:where(.el-popover) input[type="text"],
+:where(.el-popover) input[type="time"],
+:where(.el-popover) input[type="url"],
+:where(.el-popover) input[type="week"],
+:where(.el-popover) select,
+:where(.el-color-picker__panel) input[type="date"],
+:where(.el-color-picker__panel) input[type="datetime-local"],
+:where(.el-color-picker__panel) input[type="datetime"],
+:where(.el-color-picker__panel) input[type="email"],
+:where(.el-color-picker__panel) input[type="month"],
+:where(.el-color-picker__panel) input[type="number"],
+:where(.el-color-picker__panel) input[type="password"],
+:where(.el-color-picker__panel) input[type="search"],
+:where(.el-color-picker__panel) input[type="tel"],
+:where(.el-color-picker__panel) input[type="text"],
+:where(.el-color-picker__panel) input[type="time"],
+:where(.el-color-picker__panel) input[type="url"],
+:where(.el-color-picker__panel) input[type="week"],
+:where(.el-color-picker__panel) select,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="date"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="datetime-local"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="datetime"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="email"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="month"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="number"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="password"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="search"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="tel"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="text"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="time"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="url"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type="week"],
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) select {
+  min-height: 30px;
+  border-radius: 4px;
+  line-height: 2;
+  padding: 0 8px;
+}
+
+:where(.sidebar-section-list) input[type=checkbox]:focus,
+:where(.sidebar-section-list) input[type=color]:focus,
+:where(.sidebar-section-list) input[type=date]:focus,
+:where(.sidebar-section-list) input[type=datetime-local]:focus,
+:where(.sidebar-section-list) input[type=datetime]:focus,
+:where(.sidebar-section-list) input[type=email]:focus,
+:where(.sidebar-section-list) input[type=month]:focus,
+:where(.sidebar-section-list) input[type=number]:focus,
+:where(.sidebar-section-list) input[type=password]:focus,
+:where(.sidebar-section-list) input[type=radio]:focus,
+:where(.sidebar-section-list) input[type=search]:focus,
+:where(.sidebar-section-list) input[type=tel]:focus,
+:where(.sidebar-section-list) input[type=text]:focus,
+:where(.sidebar-section-list) input[type=time]:focus,
+:where(.sidebar-section-list) input[type=url]:focus,
+:where(.sidebar-section-list) input[type=week]:focus,
+:where(.sidebar-section-list) select:focus,
+:where(.sidebar-section-list) textarea:focus,
+:where(.colibri-selection-panel) input[type=checkbox]:focus,
+:where(.colibri-selection-panel) input[type=color]:focus,
+:where(.colibri-selection-panel) input[type=date]:focus,
+:where(.colibri-selection-panel) input[type=datetime-local]:focus,
+:where(.colibri-selection-panel) input[type=datetime]:focus,
+:where(.colibri-selection-panel) input[type=email]:focus,
+:where(.colibri-selection-panel) input[type=month]:focus,
+:where(.colibri-selection-panel) input[type=number]:focus,
+:where(.colibri-selection-panel) input[type=password]:focus,
+:where(.colibri-selection-panel) input[type=radio]:focus,
+:where(.colibri-selection-panel) input[type=search]:focus,
+:where(.colibri-selection-panel) input[type=tel]:focus,
+:where(.colibri-selection-panel) input[type=text]:focus,
+:where(.colibri-selection-panel) input[type=time]:focus,
+:where(.colibri-selection-panel) input[type=url]:focus,
+:where(.colibri-selection-panel) input[type=week]:focus,
+:where(.colibri-selection-panel) select:focus,
+:where(.colibri-selection-panel) textarea:focus,
+:where(.control-panel-colibri_panel) input[type=checkbox]:focus,
+:where(.control-panel-colibri_panel) input[type=color]:focus,
+:where(.control-panel-colibri_panel) input[type=date]:focus,
+:where(.control-panel-colibri_panel) input[type=datetime-local]:focus,
+:where(.control-panel-colibri_panel) input[type=datetime]:focus,
+:where(.control-panel-colibri_panel) input[type=email]:focus,
+:where(.control-panel-colibri_panel) input[type=month]:focus,
+:where(.control-panel-colibri_panel) input[type=number]:focus,
+:where(.control-panel-colibri_panel) input[type=password]:focus,
+:where(.control-panel-colibri_panel) input[type=radio]:focus,
+:where(.control-panel-colibri_panel) input[type=search]:focus,
+:where(.control-panel-colibri_panel) input[type=tel]:focus,
+:where(.control-panel-colibri_panel) input[type=text]:focus,
+:where(.control-panel-colibri_panel) input[type=time]:focus,
+:where(.control-panel-colibri_panel) input[type=url]:focus,
+:where(.control-panel-colibri_panel) input[type=week]:focus,
+:where(.control-panel-colibri_panel) select:focus,
+:where(.control-panel-colibri_panel) textarea:focus,
+:where(.el-popover) input[type=checkbox]:focus,
+:where(.el-popover) input[type=color]:focus,
+:where(.el-popover) input[type=date]:focus,
+:where(.el-popover) input[type=datetime-local]:focus,
+:where(.el-popover) input[type=datetime]:focus,
+:where(.el-popover) input[type=email]:focus,
+:where(.el-popover) input[type=month]:focus,
+:where(.el-popover) input[type=number]:focus,
+:where(.el-popover) input[type=password]:focus,
+:where(.el-popover) input[type=radio]:focus,
+:where(.el-popover) input[type=search]:focus,
+:where(.el-popover) input[type=tel]:focus,
+:where(.el-popover) input[type=text]:focus,
+:where(.el-popover) input[type=time]:focus,
+:where(.el-popover) input[type=url]:focus,
+:where(.el-popover) input[type=week]:focus,
+:where(.el-popover) select:focus,
+:where(.el-popover) textarea:focus,
+:where(.el-color-picker__panel) input[type=checkbox]:focus,
+:where(.el-color-picker__panel) input[type=color]:focus,
+:where(.el-color-picker__panel) input[type=date]:focus,
+:where(.el-color-picker__panel) input[type=datetime-local]:focus,
+:where(.el-color-picker__panel) input[type=datetime]:focus,
+:where(.el-color-picker__panel) input[type=email]:focus,
+:where(.el-color-picker__panel) input[type=month]:focus,
+:where(.el-color-picker__panel) input[type=number]:focus,
+:where(.el-color-picker__panel) input[type=password]:focus,
+:where(.el-color-picker__panel) input[type=radio]:focus,
+:where(.el-color-picker__panel) input[type=search]:focus,
+:where(.el-color-picker__panel) input[type=tel]:focus,
+:where(.el-color-picker__panel) input[type=text]:focus,
+:where(.el-color-picker__panel) input[type=time]:focus,
+:where(.el-color-picker__panel) input[type=url]:focus,
+:where(.el-color-picker__panel) input[type=week]:focus,
+:where(.el-color-picker__panel) select:focus,
+:where(.el-color-picker__panel) textarea:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=checkbox]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=color]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=date]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=datetime-local]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=datetime]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=email]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=month]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=number]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=password]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=radio]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=search]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=tel]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=text]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=time]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=url]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) input[type=week]:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) select:focus,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) textarea:focus {
+  border-color: #2271b1;
+  -webkit-box-shadow: 0 0 0 1px #2271b1;
+          box-shadow: 0 0 0 1px #2271b1;
+  outline: 2px solid transparent;
+}
+
+:where(.sidebar-section-list) .customize-control-colibri-plugin-message .card,
+:where(.colibri-selection-panel) .customize-control-colibri-plugin-message .card,
+:where(.control-panel-colibri_panel) .customize-control-colibri-plugin-message .card,
+:where(.el-popover) .customize-control-colibri-plugin-message .card,
+:where(.el-color-picker__panel) .customize-control-colibri-plugin-message .card,
+:where(.wp-full-overlay-sidebar #colibri-main-section-content) .customize-control-colibri-plugin-message .card {
+  text-align: center;
+  border: 1px solid #c3c4c7;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  position: relative;
+  margin-top: 20px;
+  padding: .7em 2em 1em;
+  min-width: 255px;
+  max-width: 520px;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 0;
+}
+
+.wp-core-ui :where(.sidebar-section-list) .button,
+.wp-core-ui :where(.colibri-selection-panel) .button,
+.wp-core-ui :where(.control-panel-colibri_panel) .button,
+.wp-core-ui :where(.colibri-admin-page) .button,
+.wp-core-ui :where(.edit-in-customizer-colibri) .button,
+.wp-core-ui :where(.el-popover) .button,
+.wp-core-ui :where(.wp-full-overlay-sidebar #colibri-main-section-content) .button {
+  padding: 0 10px;
+  line-height: 2.15384615;
+  min-height: 30px;
+  font-weight: 400;
+  border-radius: 3px;
+}
+
+.wp-core-ui :where(.sidebar-section-list) .button .dashicons:before,
+.wp-core-ui :where(.colibri-selection-panel) .button .dashicons:before,
+.wp-core-ui :where(.control-panel-colibri_panel) .button .dashicons:before,
+.wp-core-ui :where(.colibri-admin-page) .button .dashicons:before,
+.wp-core-ui :where(.edit-in-customizer-colibri) .button .dashicons:before,
+.wp-core-ui :where(.el-popover) .button .dashicons:before,
+.wp-core-ui :where(.wp-full-overlay-sidebar #colibri-main-section-content) .button .dashicons:before {
+  line-height: 1;
+}
+
+.wp-core-ui :where(.sidebar-section-list) .button.button-hero,
+.wp-core-ui :where(.colibri-selection-panel) .button.button-hero,
+.wp-core-ui :where(.control-panel-colibri_panel) .button.button-hero,
+.wp-core-ui :where(.colibri-admin-page) .button.button-hero,
+.wp-core-ui :where(.edit-in-customizer-colibri) .button.button-hero,
+.wp-core-ui :where(.el-popover) .button.button-hero,
+.wp-core-ui :where(.wp-full-overlay-sidebar #colibri-main-section-content) .button.button-hero {
+  font-size: 14px;
+  min-height: 46px;
+  line-height: 3.14285714;
+  padding: 0 36px;
+}
+
+.wp-core-ui :where(.sidebar-section-list) .button.button-small,
+.wp-core-ui :where(.colibri-selection-panel) .button.button-small,
+.wp-core-ui :where(.control-panel-colibri_panel) .button.button-small,
+.wp-core-ui :where(.colibri-admin-page) .button.button-small,
+.wp-core-ui :where(.edit-in-customizer-colibri) .button.button-small,
+.wp-core-ui :where(.el-popover) .button.button-small,
+.wp-core-ui :where(.wp-full-overlay-sidebar #colibri-main-section-content) .button.button-small {
+  min-height: 26px;
+  line-height: 2.18181818;
+  padding: 0 8px;
+  font-size: 11px;
+}
+
+.wp-core-ui :where(.sidebar-section-list) .button.button-large,
+.wp-core-ui :where(.colibri-selection-panel) .button.button-large,
+.wp-core-ui :where(.control-panel-colibri_panel) .button.button-large,
+.wp-core-ui :where(.colibri-admin-page) .button.button-large,
+.wp-core-ui :where(.edit-in-customizer-colibri) .button.button-large,
+.wp-core-ui :where(.el-popover) .button.button-large,
+.wp-core-ui :where(.wp-full-overlay-sidebar #colibri-main-section-content) .button.button-large {
+  min-height: 32px;
+  line-height: 2.30769231;
+  padding: 0 12px;
+}
+
+.wp-core-ui :where(.sidebar-section-list) .button-link,
+.wp-core-ui :where(.sidebar-section-list) .button-primary,
+.wp-core-ui :where(.colibri-selection-panel) .button-link,
+.wp-core-ui :where(.colibri-selection-panel) .button-primary,
+.wp-core-ui :where(.control-panel-colibri_panel) .button-link,
+.wp-core-ui :where(.control-panel-colibri_panel) .button-primary,
+.wp-core-ui :where(.colibri-admin-page) .button-link,
+.wp-core-ui :where(.colibri-admin-page) .button-primary,
+.wp-core-ui :where(.edit-in-customizer-colibri) .button-link,
+.wp-core-ui :where(.edit-in-customizer-colibri) .button-primary,
+.wp-core-ui :where(.el-popover) .button-link,
+.wp-core-ui :where(.el-popover) .button-primary,
+.wp-core-ui :where(.wp-full-overlay-sidebar #colibri-main-section-content) .button-link,
+.wp-core-ui :where(.wp-full-overlay-sidebar #colibri-main-section-content) .button-primary {
+  --wp-admin-theme-color: #2271b1;
+  --wp-admin-theme-color-darker-10: #135e96;
+  font-weight: 400;
+}
+
+.wp-core-ui :where(.sidebar-section-list) .button-primary,
+.wp-core-ui :where(.colibri-selection-panel) .button-primary,
+.wp-core-ui :where(.control-panel-colibri_panel) .button-primary,
+.wp-core-ui :where(.colibri-admin-page) .button-primary,
+.wp-core-ui :where(.edit-in-customizer-colibri) .button-primary,
+.wp-core-ui :where(.el-popover) .button-primary,
+.wp-core-ui :where(.wp-full-overlay-sidebar #colibri-main-section-content) .button-primary {
+  padding: 0 10px;
+  min-height: 30px;
+  line-height: 2.15384615;
+}
+
+body:not(#extra-1):not(#extra-2) .control-section-colibri_section.control-section .accordion-section-title:focus:after,
+body:not(#extra-1):not(#extra-2) .control-section-colibri_section.control-section .accordion-section-title:hover:after,
+body:not(#extra-1):not(#extra-2) .control-section-colibri_section.control-section.open .accordion-section-title:after,
+body:not(#extra-1):not(#extra-2) .control-section-colibri_section.control-section:hover > .accordion-section-title:after,
+body:not(#extra-1):not(#extra-2) .control-section-colibri_section.control-section .accordion-section-title:focus:after,
+body:not(#extra-1):not(#extra-2) .control-section-colibri_section.control-section .accordion-section-title:hover:after,
+body:not(#extra-1):not(#extra-2) .control-section-colibri_section.control-section.open .accordion-section-title:after,
+body:not(#extra-1):not(#extra-2) .control-section-colibri_section.control-section:hover > .accordion-section-title:after {
+  color: #2271b1;
+}
+
+.control-section-colibri_section .accordion-section-title:not(#extra-1):not(#extra-2) {
+  color: #000;
+}
+
+.el-color-picker__panel input {
+  min-height: 30px;
+  border-radius: 4px;
+}
+
+.customize-themes-full-container input[type="checkbox"] {
+  bottom: unset !important;
+}
+
+.customize-themes-full-container .theme-id-container .theme-name {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+/*end*/
+
 .el-popover {
   z-index: 500000 !important;
 }

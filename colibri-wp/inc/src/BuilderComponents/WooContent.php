@@ -50,7 +50,7 @@ class WooContent extends BuilderComponentBase {
         $self = $this;
 
         $sidebar_id = 'ecommerce-'.$side;
-        $is_active = is_active_sidebar("colibri-${sidebar_id}");
+        $is_active = is_active_sidebar("colibri-{$sidebar_id}");
         $in_customizer = isset ( $GLOBALS['wp_customize'] );
         $is_active = $is_active || $in_customizer;
         $display_sidebar = Hooks::colibri_apply_filters( 'colibri_sidebar_enabled', $is_active, $sidebar_id );

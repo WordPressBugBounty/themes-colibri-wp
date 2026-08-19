@@ -3,7 +3,7 @@
 
 /*
  Theme Name:   Colibri WP
- Version:      1.0.165
+ Version:      1.0.169
  Theme URI:    https://colibriwp.com/go/colibri-theme/
  Description:  A beautiful, very customizable, multipurpose theme that you can use to create amazing websites through drag and drop. It comes with a pre-designed home page, 5 header designs and over 35 ready-to-use content blocks that you can easily customize. You can also design your own custom blocks by combining more than 25 drag and drop components. It offers lots of customization options (video background, slideshow background, header content types, etc) to help you create a website that stands out in no time. It is also designed with responsiveness, to work on mobile devices right out of the box. It is the only theme you will ever need! CHECK OUT THE DEMOS: https://colibriwp.com/go/demos
  Author:       Extend Themes
@@ -13,7 +13,7 @@
  Tags:         entertainment, food-and-drink, portfolio, one-column, two-columns, right-sidebar, grid-layout, custom-header, custom-menu, custom-logo, full-width-template, theme-options, translation-ready, featured-images, threaded-comments
  Text Domain:  colibri-wp
 
- Tested up to: 7.0
+ Tested up to: 7.1
  Requires PHP: 5.6
  
 */
@@ -5355,6 +5355,10 @@ html.colibri-wp-theme .wp-block-accordion-heading__toggle:not(.extra-1):not(.ext
 
 /*end*/
 
+html.colibri-wp-theme .wp-block-tab-list button {
+  padding: var(--wp--preset--spacing--20, 0.5em) var(--wp--preset--spacing--30, 1em);
+}
+
 html.colibri-wp-theme .woocommerce-page,
 html.colibri-wp-theme .woocommerce {
   font-size: calc(16px * 0.875);
@@ -9803,6 +9807,18 @@ html.colibri-wp-theme #colibri .colibri_search_container .colibri_search_input::
   font-style: inherit;
   font-weight: inherit;
   color: inherit;
+}
+
+html.colibri-wp-theme .colibri_logo_fancybox .fancybox-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 html.colibri-wp-theme [data-colibri-main-sidebar-col="1"] {
